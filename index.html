@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDo" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .done {
+            text-decoration: line-through;
+            color: blue;
+        }
+    </style>
+
+
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+
+<div ng-controller="controllerList">
+    <form name="frm" ng-submit="addTodo()">
+        <input type="text" name="newToDo" ng-model="newToDo" required/>
+        <button>go</button>
+    </form>
+    <button ng-click="clearCompleted()">clear completed</button>
+    <ul>
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done"/>
+            <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+        </li>
+    </ul>
+</div>
+
+
+<script src="controllerList.js"></script>
+</body>
+</html>
