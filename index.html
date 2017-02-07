@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ToDo" xmlns="http://www.w3.org/1999/html">
+<html lang="en" ng-app="ToDo" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 
     <style>
         .done {
-            text-decoration: line-through;
-            color: blue;
+                        color: blue;
         }
     </style>
 
 
 </head>
 <body>
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+
+
+
+
+
+
+
+</div>
 
 
 <div ng-controller="controllerList">
@@ -23,7 +33,7 @@
         <input type="text" name="newToDo" ng-model="newToDo" required/>
         <button>go</button>
     </form>
-    <button ng-click="clearCompleted()">clear completed</button>
+    <button ng-click="clearTasks()">clear items</button>
     <ul>
         <li ng-repeat="todo in todos">
             <input type="checkbox" ng-model="todo.done"/>
@@ -31,19 +41,27 @@
         </li>
     </ul>
 </div>
-<p><a href="#/">Pro</a></p>
-
-<a href="#aboutUs">about us</a>
-<a href="#options">Tomato</a>
-
-<p>about us to options</p>
-
-<p>this is the $routeProvider.when method.</p>
 
 
 
-<ng-view></ng-view>
+<div class="link" ui-sref="#"> angular link</div>
 
+<a ui-sref="home">Home</a>
+<a ui-sref="pro">pro</a>
+<a ui-sref="aboutUs">about us</a>
+
+<p>welcome to options</p>
+<p>welcome to pro</p>
+<p>welcome to about us</p>
+
+
+
+
+
+<ui-view></ui-view>
+
+
+<script src="style.css."></script>
 <script src="router.js"></script>
 <script src="controllerList.js"></script>
 </body>

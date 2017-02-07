@@ -13,7 +13,7 @@
                 $scope.newToDo = ''
             };
 
-            $scope.clearCompleted = function () {
+            $scope.clearTasks = function () {
             };
 
             $scope.todos = $scope.todos.filter(function(item) {
