@@ -15,9 +15,11 @@
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
 
 <div ng-controller="controllerList">
-    <form name="frm" ng-submit="addTodo()">
+    <form name="form" ng-submit="addTodo()">
         <input type="text" name="newToDo" ng-model="newToDo" required/>
         <button>go</button>
     </form>
@@ -29,8 +31,20 @@
         </li>
     </ul>
 </div>
+<p><a href="#/">Pro</a></p>
+
+<a href="#aboutUs">about us</a>
+<a href="#options">Tomato</a>
+
+<p>about us to options</p>
+
+<p>this is the $routeProvider.when method.</p>
 
 
+
+<ng-view></ng-view>
+
+<script src="router.js"></script>
 <script src="controllerList.js"></script>
 </body>
 </html>

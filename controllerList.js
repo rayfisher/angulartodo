@@ -5,7 +5,7 @@
     angular.module("ToDo", [])
         .controller("controllerList", function ($scope) {
             $scope.todos = [
-                {'title': 'select a stock', 'done': false}
+                {'title': 'select a stock', }
             ];
 
             $scope.addTodo = function () {
@@ -16,7 +16,7 @@
             $scope.clearCompleted = function () {
             };
 
-            $scope.todos = $scope.todos.filter(function (item) {
+            $scope.todos = $scope.todos.filter(function(item) {
                 return !item.done
             });
         });
