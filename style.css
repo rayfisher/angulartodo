@@ -1,2 +1,37 @@
 
-.navbar
+
+.home {
+    width: 75%
+     }
+#pro {
+    color: purple;
+    margin-left: 700px;
+}
+#aboutUs {
+    color: #007aff;
+    margin-left: 700px;
+}
+#options {
+    width: 200px;
+    margin-left: 700px;
+    color: white;
+}
+p {
+    font-family: "Apple Chancery";
+}
+
+#button {
+    color: #0c60ee;
+}
+#homeLay {
+    display: inline;
+}
+.dice {
+    display: inline;
+    background-color: darkgray;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+#yes {
+    margin: 10%
+}

@@ -1,68 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ToDo" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en" ng-app="ToDo" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 
     <style>
         .done {
-                        color: blue;
+            color: blue;
         }
     </style>
 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
-<body>
-
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+<body class="dice"><img src ="dice.jpg">
 
 
+<!--<ul class="nav nav-tabs">-->
+    <!--<li class="active"><a href="#">lists</a></li>-->
+    <!--<li ng-repeat="list in STUFF HERE" ng-click="STUFF HERE(STUFF);"><a href="#">{{STUFF HERE}}</a></li>-->
 
-
+<!--</ul>-->
 
 
 
-</div>
-
-
+<div id="homeLay">
 <div ng-controller="controllerList">
+
+    <span>{{currentList.name}}</span>
+    <button id="button2" ng-click="addLists()">add list</button>
+
+    <input type="text" name="newList" ng-model="newList" required/>
+    <button id="button2" ng-click="clearTasks()">clear items</button>
+
+    <ul>
+        <li ng-repeat="list in lists">
+            <input type="button" ng-click="setCurrentList(list)" value="select"/>
+                     <span >{{list.name}}</span>
+        </li>
+
+    </ul>
+
+
+
+
     <form name="form" ng-submit="addTodo()">
         <input type="text" name="newToDo" ng-model="newToDo" required/>
-        <button>go</button>
+        <button ng-disabled="frm.$invalid">Go</button>
     </form>
-    <button ng-click="clearTasks()">clear items</button>
+    <button id="button" ng-click="clearTasks()">clear items</button>
     <ul>
-        <li ng-repeat="todo in todos">
+        <li ng-repeat="todo in currentList.todos">
             <input type="checkbox" ng-model="todo.done"/>
             <span ng-class="{'done':todo.done}">{{todo.title}}</span>
         </li>
     </ul>
 </div>
+</div>
 
 
 
-<div class="link" ui-sref="#"> angular link</div>
 
-<a ui-sref="home">Home</a>
+
+
+
+<div class="home">
 <a ui-sref="pro">pro</a>
 <a ui-sref="aboutUs">about us</a>
-
-<p>welcome to options</p>
-<p>welcome to pro</p>
-<p>welcome to about us</p>
+<a ui-sref="options">options</a>
+</div>
 
 
 
+
+
+</div>
 
 
 <ui-view></ui-view>
 
 
-<script src="style.css."></script>
-<script src="router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+
 <script src="controllerList.js"></script>
+<script src="router.js"></script>
 </body>
 </html>
