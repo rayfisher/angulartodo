@@ -30,10 +30,10 @@
 <div ng-controller="controllerList">
 
     <span>{{currentList.name}}</span>
-    <button id="button2" ng-click="addLists()">add list</button>
+    <button id="button" ng-click="addLists()">add list</button>
 
     <input type="text" name="newList" ng-model="newList" required/>
-    <button id="button2" ng-click="clearTasks()">clear items</button>
+    <button id="button" ng-click="clearTasks()">clear items</button>
 
     <ul>
         <li ng-repeat="list in lists">

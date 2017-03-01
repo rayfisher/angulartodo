@@ -28,8 +28,8 @@
                 $scope.currentList = list
             }
             $scope.clearTasks = function () {
-                var filterArray= $filter('filter')($scope.todos,{done:false});
-                $scope.todos= filterArray
+                var filterArray= $filter('filter')($scope.currentList.todos,{done:false});
+                $scope.currentList.todos= filterArray
             };
             $scope.todos = $scope.todos.filter(function(item) {
                 return !item.done
