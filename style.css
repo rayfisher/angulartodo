@@ -1,20 +1,36 @@
 
 
-.home {
-    width: 75%
-     }
+.container{
+    width: 70%;
+    margin: auto;
+}
+.parallax {
+    min-height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.whitesection {
+    background-color: #878787;
+    min-height: 600px;
+    width: 100%;
+}
+.imgAngular {
+    background-image: url(dice.jpg);
+    width: 100%;
+    height: 500px;
+}
 #pro {
     color: purple;
-    margin-left: 700px;
 }
 #aboutUs {
-    color: #007aff;
-    margin-left: 700px;
+    color: #0c60ee;
+
 }
 #options {
-    width: 200px;
-    margin-left: 700px;
-    color: white;
+   color: black;
 }
 p {
     font-family: "Apple Chancery";
@@ -23,15 +39,26 @@ p {
 #button {
     color: #0c60ee;
 }
-#homeLay {
-    display: inline;
+#button1 {
+    color: #0c60ee;
 }
-.dice {
-    display: inline;
-    background-color: darkgray;
-    margin-left: 200px;
-    margin-top: 50px;
+#button2 {
+    color: #0c60ee;
+}
+#button3 {
+    color: #0c60ee;
+}
+.done {
+    color: red;
 }
 #yes {
     margin: 10%
+}
+
+#span {
+    float: left;
+}
+
+ui-view {
+    text-align: center;
 }

@@ -2,9 +2,8 @@
  * Created by rayfisher on 2/7/17.
  */
 
-var ToDo= angular
-    .module("ToDo")
-    .config(function($stateProvider){
+var ToDo= angular.module("ToDo")
+          .config(function($stateProvider){
 
     $stateProvider
         .state("pro", {

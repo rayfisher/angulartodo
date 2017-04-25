@@ -5,18 +5,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <style>
-        .done {
-            color: blue;
-        }
-    </style>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body class="dice"><img src ="dice.jpg">
-
+<body>
 
 <!--<ul class="nav nav-tabs">-->
     <!--<li class="active"><a href="#">lists</a></li>-->
@@ -24,46 +18,39 @@
 
 <!--</ul>-->
 
+<div class="container">
+    <div class="parallax">
+        <div class="parallax imgAngular">
+            <div class="whitesection"><h2>AngularJS</h2>
 
+                        <div ng-controller="controllerList">
 
-<div id="homeLay">
-<div ng-controller="controllerList">
+                            <span>{{currentList.name}}</span>
+                            <button id="button1" ng-click="addLists()">add list</button>
 
-    <span>{{currentList.name}}</span>
-    <button id="button" ng-click="addLists()">add list</button>
+                            <input type="text" name="newList" ng-model="newList" required/>
+                            <button id="button2" ng-click="clearTasks()">clear items</button>
 
-    <input type="text" name="newList" ng-model="newList" required/>
-    <button id="button" ng-click="clearTasks()">clear items</button>
-
-    <ul>
-        <li ng-repeat="list in lists">
-            <input type="button" ng-click="setCurrentList(list)" value="select"/>
-                     <span >{{list.name}}</span>
-        </li>
-
-    </ul>
-
-
-
-
-    <form name="form" ng-submit="addTodo()">
-        <input type="text" name="newToDo" ng-model="newToDo" required/>
-        <button ng-disabled="frm.$invalid">Go</button>
-    </form>
-    <button id="button" ng-click="clearTasks()">clear items</button>
-    <ul>
-        <li ng-repeat="todo in currentList.todos">
-            <input type="checkbox" ng-model="todo.done"/>
-            <span ng-class="{'done':todo.done}">{{todo.title}}</span>
-        </li>
-    </ul>
+                            <ul>
+                                <li ng-repeat="list in lists">
+                                    <input type="button" ng-click="setCurrentList(list)" value="select"/>
+                                    <span >{{list.name}}</span>
+                                </li>
+                            </ul>
+                            <form name="form" ng-submit="addTodo()">
+                                <input type="text" name="newToDo" ng-model="newToDo" required/>
+                                <button id="button3" ng-disabled="frm.$invalid">Go</button>
+                            </form>
+                            <button id="button" ng-click="clearTasks()">clear items</button>
+                            <ul>
+                                <li ng-repeat="todo in currentList.todos">
+                                    <input type="checkbox" ng-model="todo.done"/>
+                                    <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+                                </li>
+                            </ul>
+                      </div>
+            </div>
 </div>
-</div>
-
-
-
-
-
 
 
 <div class="home">
@@ -72,14 +59,10 @@
 <a ui-sref="options">options</a>
 </div>
 
-
-
-
+ <ui-view></ui-view>
 
 </div>
-
-
-<ui-view></ui-view>
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
