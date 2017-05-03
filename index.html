@@ -43,10 +43,11 @@
                                     <span >{{list.name}}<input type="checkbox">
                                 </li>
                             </ul>
-                            <form name="form" ng-submit="addTodo()">
+
                                 <input type="text" name="newToDo" ng-model="newToDo" required/>
-                                <button id="button3" ng-disabled="frm.$invalid">Go</button>
-                            </form>
+                                <input type="submit" value="go" id="button3" ng-click="addTodo()" ng-disabled="form.$invalid"/>
+
+
                             <button id="button4" ng-click="clearTasks()">clear items</button>
                             <ul>
                                 <li ng-repeat="todo in currentList.todos">

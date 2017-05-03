@@ -3,7 +3,7 @@
  */
 (function () {
     angular.module("ToDo", ['ui.router'])
-        .controller("controllerList", function ($scope,$filter, ToDoService) {
+        .controller("controllerList", function ($scope, $filter, ToDoService) {
             $scope.todos = [
                 {'title': 'select a stock', done: false}
             ];
