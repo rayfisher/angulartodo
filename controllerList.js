@@ -15,6 +15,14 @@
             $scope.addLists= function() {
                 ToDoService.createNewList($scope.newList);
             }
+            // if newList = !null{
+            //
+            // }
+            // else{
+            //     newList = null{
+            //         run angular material error toaster
+            //     }
+            // }
          //   console.log(ToDoService.lists);
 
          //   console.log(ToDoService.lists);
@@ -49,7 +57,10 @@
                 })
             }
             function addTodo() {
-
+                lists.push({
+                    name: listName,
+                    todos: []
+                })
             }
             return service
         });

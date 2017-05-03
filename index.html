@@ -21,35 +21,43 @@
 <div class="container">
     <div class="parallax">
         <div class="parallax imgAngular">
-            <div class="whitesection"><h2>AngularJS</h2>
+            <div class="whitesection">
+
+                <div id="center">
+                <h2>AngularJS Todo 2</h2>
 
                         <div ng-controller="controllerList">
-
+                        <form name="myForm">
                             <span>{{currentList.name}}</span>
-                            <button id="button1" ng-click="addLists()">add list</button>
+                            <button id="button" ng-click="addLists()">add list</button>
 
                             <input type="text" name="newList" ng-model="newList" required/>
-                            <button id="button2" ng-click="clearTasks()">clear items</button>
+                            <span ng-show="myForm.newList.$touched && myForm.newList.$invalid">The name is required.</span>
+
+                            <button id="button2" ng-click="todos()">clear </button>
+
 
                             <ul>
                                 <li ng-repeat="list in lists">
                                     <input type="button" ng-click="setCurrentList(list)" value="select"/>
-                                    <span >{{list.name}}</span>
+                                    <span >{{list.name}}<input type="checkbox">
                                 </li>
                             </ul>
                             <form name="form" ng-submit="addTodo()">
                                 <input type="text" name="newToDo" ng-model="newToDo" required/>
                                 <button id="button3" ng-disabled="frm.$invalid">Go</button>
                             </form>
-                            <button id="button" ng-click="clearTasks()">clear items</button>
+                            <button id="button4" ng-click="clearTasks()">clear items</button>
                             <ul>
                                 <li ng-repeat="todo in currentList.todos">
                                     <input type="checkbox" ng-model="todo.done"/>
                                     <span ng-class="{'done':todo.done}">{{todo.title}}</span>
                                 </li>
                             </ul>
+                            </form>
                       </div>
             </div>
+                </div>
 </div>
 
 
