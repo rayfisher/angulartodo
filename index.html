@@ -55,6 +55,10 @@
                                     <span ng-class="{'done':todo.done}">{{todo.title}}</span>
                                 </li>
                             </ul>
+
+                            <button ng-click="loadData()">load data</button>
+                            <button ng-click="saveData()">save data</button>
+
                             </form>
                       </div>
             </div>
@@ -77,6 +81,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
 
+<script src="storage.js"></script>
 <script src="controllerList.js"></script>
 <script src="router.js"></script>
 </body>

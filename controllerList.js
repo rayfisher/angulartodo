@@ -3,11 +3,13 @@
  */
 (function () {
     angular.module("ToDo", ['ui.router'])
-        .controller("controllerList", function ($scope, $filter, ToDoService) {
+        .controller("controllerList", function ($scope, $filter, ToDoService, storage) {
             $scope.todos = [
                 {'title': 'select a stock', done: false}
             ];
             $scope.lists= ToDoService.lists;
+
+            storage.saveData();
 
        //     var lists = []
        //     lists.push({name: userinput.listName, list:[]})
