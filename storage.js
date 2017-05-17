@@ -8,22 +8,20 @@
 angular.module('ToDo')
     .service('storage', Storage);
 
-    function Storage (){
-        $scope.saveData = function () {
-            localstorage.lists= lists;
-        }
-        $scope.loadData = function () {
-            localstorage.lists= lists;
-        }
+    function Storage ($localStorage){
+        var serve = this;
+        // var service = {
+            // saveData: saveData
+        // };
+        // return service;
 
-        $scope.saveData = function () {
-            localstorage.ToDo = ToDo;
-        }
-        $scope.loadData = function () {
-            localstorage.ToDos = ToDo;
-        }
-
+     serve.saveData = function (lists) {
+            $localStorage.lists= lists;
+        };
+        // return saveData();
+     function loadData (){
+        $localStorage.lists=lists;
     }
 
-    })();
+    }})();
 

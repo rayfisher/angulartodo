@@ -2,14 +2,15 @@
  * Created by rayfisher on 2/5/17.
  */
 (function () {
-    angular.module("ToDo", ['ui.router'])
-        .controller("controllerList", function ($scope, $filter, ToDoService, storage) {
+    angular.module("ToDo", ['ui.router', 'ngStorage'])
+        .controller("controllerList", function ($scope, $filter, ToDoService, storage, $localStorage) {
             $scope.todos = [
                 {'title': 'select a stock', done: false}
             ];
             $scope.lists= ToDoService.lists;
 
             storage.saveData();
+            // storage.loadData();
 
        //     var lists = []
        //     lists.push({name: userinput.listName, list:[]})
